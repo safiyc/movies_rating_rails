@@ -7,11 +7,16 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(login_params[:password])
       login(user)
-      redirect_back fallback_location: new_session_path, notice: "Logged in"
+      redirect_back fallback_location: new_session_path, notice: 'Logged in'
     else
       flash.now[:notice] = 'Invalid username / password combination'
       render :new
     end
+  end
+
+  def destroy
+    logout
+    redirect_back fallback_location: new_session_path, notice: "Logged out"
   end
 
   private
