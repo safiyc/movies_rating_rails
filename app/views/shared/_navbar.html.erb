@@ -1,9 +1,9 @@
 <header>
   <nav>
-    <%= link_to "movies", "#", class: "logo" %>
+    <%= link_to "movies", root_path, class: "logo" %>
 
     <div class="navlinks">
-      <%= link_to "new", "#" %>
+      <%= link_to "newest", "#" %>
       <%= link_to "reviews", "#" %>
 
       <% unless logged_in? %>
@@ -12,7 +12,7 @@
       <% end %>
 
       <% if logged_in? %>
-        <%= link_to "submit a link", "#" %>
+        <%= link_to "submit a movie", "new_movie_path" %>
         <%= link_to "logout", sessions_path, method: :delete %>
       <% end %>
     </div>
