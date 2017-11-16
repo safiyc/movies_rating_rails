@@ -9,4 +9,7 @@ class User < ActiveRecord::Base
 
   validates :password, length: { minimum: 3 }
 
+  def owns_movie?(movie)
+    self == movie.user
+  end
 end
