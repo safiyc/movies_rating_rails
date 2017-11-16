@@ -12,7 +12,7 @@
       <% end %>
 
       <% if logged_in? %>
-        <%= link_to "submit a movie", "new_movie_path" %>
+        <%= link_to "submit a movie", new_movie_path %>
         <%= link_to "logout", sessions_path, method: :delete %>
       <% end %>
     </div>
