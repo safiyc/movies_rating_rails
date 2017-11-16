@@ -14,7 +14,7 @@ class MoviesController < ApplicationController
     @movie = current_user.movies.new(movie_params)
 
     if @movie.save
-      redirect_to root_path, notice: "Link successfully created"
+      redirect_to root_path, notice: "Movie successfully created"
     else
       render :new
     end
@@ -45,7 +45,7 @@ class MoviesController < ApplicationController
     @movie = Movie.find_by(id: params[:id])
 
     if @movie.update(movie_params)
-      redirect_to root_path, notice: "Link successfully updated"
+      redirect_to root_path, notice: "Movie successfully updated"
     else
       render :edit
     end
