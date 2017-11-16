@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :movies
+  has_many :movies, dependent: :destroy
   has_secure_password
 
   validates :username,
