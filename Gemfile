@@ -35,4 +35,4 @@ group :development do
 end
 
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', '>= 1.0.0',  platforms: [:mingw, :mswin, :x64_mingw, :jruby]
