@@ -41,7 +41,18 @@ class MoviesController < ApplicationController
     end
   end
 
+  def update
+    @movie = Movie.find_by(id: params[:id])
+
+    if @movie.update(movie_params)
+      redirect_to root_path, notice: "Link successfully updated"
+    else
+      render :edit
+    end
+  end
+
   def movie_params
     params.require(:movie).permit(:title, :description, :genre, :release_date)
   end
+
 end
