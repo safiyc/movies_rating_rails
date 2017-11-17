@@ -6,7 +6,11 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create]
 
-  resources :movies, except: :index
+  resources :movies, except: :index do
+    resources :reviews, only: [:create, :update, :destroy]
+  end
 
+  get '/comments' => 'comments#index'
+  
   root 'movies#index'
 end

@@ -1,0 +1,26 @@
+<section class="movie_thread">
+  <header>
+    <h4>
+      <%=  @movie.title %>
+    </h4>
+    <p>
+      <%= @movie.description %>
+    </p>
+
+    <% if logged_in? %>
+      <div class="add-review row">
+        <div class="col-sm-6">
+          <%= form_for :review, url: movie_reviews_path(@movie) do |f| %>
+            <div class="form-group">
+              <%=  f.text_area :body, class: "form-control", placeholder: "lorem ipsum..." rows: 10, required: true %>
+            </div>
+
+            <div class="form-group">
+              <%= f.button "add review", class: "btn btn-success" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </header>
+</section>

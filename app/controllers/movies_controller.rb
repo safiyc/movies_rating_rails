@@ -10,6 +10,11 @@ class MoviesController < ApplicationController
     @movie = Movie.new
   end
 
+  def show
+    @movie = Movie.find_by(id: params[:id])
+
+  end
+
   def create
     @movie = current_user.movies.new(movie_params)
 
